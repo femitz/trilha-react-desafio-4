@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface ButtonContainerProps {
   children: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 }
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
@@ -17,5 +18,11 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   &:hover {
     opacity: 0.6;
     cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
   }
 `;

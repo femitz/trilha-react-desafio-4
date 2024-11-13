@@ -12,8 +12,8 @@ const schema = yup
     email: yup.string().email("E-mail inválido").required("Campo obrigatório"),
     password: yup
       .string()
-      .min(6, "No minimo 6 caracteres")
-      .required("Campo obrigatório"),
+      .required("Campo obrigatório")
+      .min(6, "No minimo 6 caracteres"),
   })
   .required();
 
@@ -49,7 +49,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" disabled={!isValid}/>
         </Column>
       </LoginContainer>
     </Container>
